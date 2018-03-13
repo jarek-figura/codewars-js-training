@@ -1,18 +1,12 @@
-/* ES6
-var array_diff = (a, b) => a.filter(item => b.indexOf(item) < 0);
-*/
-
 /*
-function array_diff(a, b) {
-	return a.filter(e => !b.includes(e));
-}*/
+ implement an difference function, which subtracts one list from another.
 
-/*
-function array_diff(a, b) {
-	return a.filter(function (value) {
-		return b.indexOf(value) === -1;
-	});
-}*/
+ It should remove all values from list a, which are present in list b.
+ array_diff([1,2],[1]) == [2]
+
+ If a value is present in b, all of its occurrences must be removed from the other:
+ array_diff([1,2,2,2,3],[2]) == [1,3]
+ */
 
 function array_diff(a, b) {
 	var lena = a.length;
@@ -27,6 +21,21 @@ function array_diff(a, b) {
 	}
 	return a;
 }
+
+// ES6
+//var array_diff = (a, b) => a.filter(item => b.indexOf(item) < 0);
+
+/*
+function array_diff(a, b) {
+	return a.filter(e => !b.includes(e));
+}*/
+
+/*
+function array_diff(a, b) {
+	return a.filter(function (value) {
+		return b.indexOf(value) === -1;
+	});
+}*/
 
 console.log(array_diff([1,2], [1]));
 console.log(array_diff([1,2,2,2,3], [2]));
