@@ -1,4 +1,5 @@
-/*
+/* printerError.js
+
  In a factory a printer prints labels for boxes. For one kind of boxes the printer
  has to use colors which, for the sake of simplicity, are named with letters
  from a to m.
@@ -18,19 +19,24 @@
  Don't reduce this fraction to a simpler expression.
 
  The string has a length greater or equal to one and
- contains only letters from ato z.
+ contains only letters from a to z.
 
  #Examples:
  s="aaabbbbhaijjjm";         error_printer(s) => "0/14"
  s="aaaxbbbbyyhwawiwjjjwwm"; error_printer(s) => "8/22"
  */
 
+/*
 function printerError (s) {
 	var res = s.match(/[n-z]/g);
 	return (res === null ? [] : res).length + "/" + s.length;
 }
+*/
 
+const printerError = s => (s.match(/[n-z]/g) || []).length + '/' + s.length;
 
+console.log(printerError(""));
+console.log(printerError("x"));
 console.log(printerError("aaabbbbhaijjjm"));
 console.log(printerError("aaaxbbbbyyhwawiwjjjwwm"));
 console.log(printerError("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz"));

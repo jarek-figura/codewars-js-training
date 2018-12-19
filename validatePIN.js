@@ -1,9 +1,10 @@
-/*
- ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything
- but exactly 4 digits or exactly 6 digits.
- If the function is passed a valid PIN string, return true, else return false.
- */
+/* validatePIN.js
 
+   ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything
+   but exactly 4 digits or exactly 6 digits.
+   If the function is passed a valid PIN string, return true, else return false.
+ */
+/*
 function validatePIN (pin) {
 	var len = pin.length;
 	if (len !== 4 && len !== 6)
@@ -11,7 +12,7 @@ function validatePIN (pin) {
 	var expr = new RegExp("[0-9]{" + len + "}");
 	return expr.test(pin);
 }
-
+*/
 /*
 function validatePIN (pin) {
 	return /^(\d{4}|\d{6})$/.test(pin);
@@ -24,7 +25,7 @@ function validatePIN (pin) {
 }*/
 
 // ES6
-//const validatePIN = pin => /^(\d{4}$|\d{6}$)/.test(pin);
+const validatePIN = pin => /^\d{4}$|^\d{6}$/.test(pin);
 
 console.log("1 - " + validatePIN("1"));
 console.log("12 - " + validatePIN("12"));

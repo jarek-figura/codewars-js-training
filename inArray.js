@@ -1,4 +1,5 @@
-/* inArray.js =>
+/* inArray.js
+
    Given two arrays of strings a1 and a2 return a sorted array r in lexicographical
    order of the strings of a1 which are substrings of strings of a2.
 
@@ -17,16 +18,16 @@
 
    Beware: r must be without duplicates.
  */
-/*
+
 function inArray (arr1, arr2) {
 	return arr1.filter(function (x) {
 		return arr2.some(function (y) {
-			return y.includes(x) ? x : undefined;
+      if (y.includes(x)) return x;
 		});
 	}).sort();
-}*/
+}
 
-var inArray = (arr1, arr2) => (arr1.filter(x =>	arr2.some(y => y.includes(x) ? x : undefined))).sort();
+//var inArray = (arr1, arr2) => (arr1.filter(x =>	arr2.some(y => y.includes(x) ? x : undefined))).sort();
 
 var a1, a2;
 a2 = ["lively", "alive", "harp", "sharp", "armstrong"];
